@@ -13,6 +13,7 @@ namespace MDLproject.Data
             : base(options)
         {
         }
+
         public DbSet<Deck> Decks { get; set; }
         public DbSet<Format> Formats { get; set; }
         public DbSet<User> Users { get; set; }

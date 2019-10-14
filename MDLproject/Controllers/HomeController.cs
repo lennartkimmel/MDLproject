@@ -12,6 +12,7 @@ namespace MDLproject.Controllers
     {
         public IActionResult Index()
         {
+            
             return View();
         }
 

@@ -22,7 +22,7 @@ namespace MDLproject.Controllers
         // GET: Decks
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Deck.Include(d => d.Format).Include(d => d.User);
+            var applicationDbContext = _context.Decks.Include(d => d.Format).Include(d => d.User);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -34,7 +34,7 @@ namespace MDLproject.Controllers
                 return NotFound();
             }
 
-            var deck = await _context.Deck
+            var deck = await _context.Decks
                 .Include(d => d.Format)
                 .Include(d => d.User)
                 .FirstOrDefaultAsync(m => m.DeckID == id);
@@ -49,7 +49,7 @@ namespace MDLproject.Controllers
         // GET: Decks/Create
         public IActionResult Create()
         {
-            ViewData["FormatID"] = new SelectList(_context.Format, "FormatID", "FormatID");
+            ViewData["FormatID"] = new SelectList(_context.Formats, "FormatID", "FormatID");
             ViewData["UserID"] = new SelectList(_context.Set<User>(), "UserID", "Name");
             return View();
         }
@@ -67,7 +67,7 @@ namespace MDLproject.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["FormatID"] = new SelectList(_context.Format, "FormatID", "FormatID", deck.FormatID);
+            ViewData["FormatID"] = new SelectList(_context.Formats, "FormatID", "FormatID", deck.FormatID);
             ViewData["UserID"] = new SelectList(_context.Set<User>(), "UserID", "Name", deck.UserID);
             return View(deck);
         }
@@ -80,12 +80,12 @@ namespace MDLproject.Controllers
                 return NotFound();
             }
 
-            var deck = await _context.Deck.FindAsync(id);
+            var deck = await _context.Decks.FindAsync(id);
             if (deck == null)
             {
                 return NotFound();
             }
-            ViewData["FormatID"] = new SelectList(_context.Format, "FormatID", "FormatID", deck.FormatID);
+            ViewData["FormatID"] = new SelectList(_context.Formats, "FormatID", "FormatID", deck.FormatID);
             ViewData["UserID"] = new SelectList(_context.Set<User>(), "UserID", "Name", deck.UserID);
             return View(deck);
         }
@@ -122,7 +122,7 @@ namespace MDLproject.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["FormatID"] = new SelectList(_context.Format, "FormatID", "FormatID", deck.FormatID);
+            ViewData["FormatID"] = new SelectList(_context.Formats, "FormatID", "FormatID", deck.FormatID);
             ViewData["UserID"] = new SelectList(_context.Set<User>(), "UserID", "Name", deck.UserID);
             return View(deck);
         }
@@ -135,7 +135,7 @@ namespace MDLproject.Controllers
                 return NotFound();
             }
 
-            var deck = await _context.Deck
+            var deck = await _context.Decks
                 .Include(d => d.Format)
                 .Include(d => d.User)
                 .FirstOrDefaultAsync(m => m.DeckID == id);
@@ -152,15 +152,15 @@ namespace MDLproject.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var deck = await _context.Deck.FindAsync(id);
-            _context.Deck.Remove(deck);
+            var deck = await _context.Decks.FindAsync(id);
+            _context.Decks.Remove(deck);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool DeckExists(int id)
         {
-            return _context.Deck.Any(e => e.DeckID == id);
+            return _context.Decks.Any(e => e.DeckID == id);
         }
     }
 }

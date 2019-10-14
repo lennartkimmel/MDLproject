@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Gebruiker\\source\\repos\\MDLproject\\MDLproject\\MDLproject.csproj": {}
+    "C:\\Users\\Lennart\\Documents\\GitHub\\MDLproject\\MDLproject\\MDLproject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Gebruiker\\source\\repos\\MDLproject\\MDLproject\\MDLproject.csproj": {
+    "C:\\Users\\Lennart\\Documents\\GitHub\\MDLproject\\MDLproject\\MDLproject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gebruiker\\source\\repos\\MDLproject\\MDLproject\\MDLproject.csproj",
+        "projectUniqueName": "C:\\Users\\Lennart\\Documents\\GitHub\\MDLproject\\MDLproject\\MDLproject.csproj",
         "projectName": "MDLproject",
-        "projectPath": "C:\\Users\\Gebruiker\\source\\repos\\MDLproject\\MDLproject\\MDLproject.csproj",
-        "packagesPath": "C:\\Users\\Gebruiker\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gebruiker\\source\\repos\\MDLproject\\MDLproject\\obj\\",
+        "projectPath": "C:\\Users\\Lennart\\Documents\\GitHub\\MDLproject\\MDLproject\\MDLproject.csproj",
+        "packagesPath": "C:\\Users\\Lennart\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Lennart\\Documents\\GitHub\\MDLproject\\MDLproject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Gebruiker\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Lennart\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
